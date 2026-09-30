@@ -1,27 +1,29 @@
-const works = document.querySelectorAll(".work");
+```javascript
+const portfolioItems =
+    document.querySelectorAll(".portfolio-item");
 
-const lightbox = document.querySelector(".lightbox");
+const lightbox =
+    document.querySelector(".lightbox");
 
 const lightboxImage =
     document.querySelector(".lightbox img");
 
-const closeButton =
-    document.querySelector(".close");
+const lightboxClose =
+    document.querySelector(".lightbox-close");
 
 const lightboxNumber =
     document.querySelector(".lightbox-number");
 
 
-works.forEach((work) => {
+portfolioItems.forEach((item) => {
 
-    work.addEventListener("click", () => {
+    item.addEventListener("click", () => {
 
         const image =
-            work.getAttribute("data-image");
+            item.getAttribute("data-image");
 
         const number =
-            work.querySelector(".work-info span")
-                .textContent;
+            item.getAttribute("data-number");
 
         lightboxImage.src = image;
 
@@ -30,7 +32,8 @@ works.forEach((work) => {
 
         lightbox.classList.add("active");
 
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow =
+            "hidden";
 
     });
 
@@ -41,12 +44,13 @@ function closeLightbox() {
 
     lightbox.classList.remove("active");
 
-    document.body.style.overflow = "";
+    document.body.style.overflow =
+        "";
 
 }
 
 
-closeButton.addEventListener(
+lightboxClose.addEventListener(
     "click",
     closeLightbox
 );
@@ -78,3 +82,4 @@ document.addEventListener(
 
     }
 );
+```
